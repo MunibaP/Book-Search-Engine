@@ -5,7 +5,10 @@
 ![License Badge](https://shields.io/badge/license-MIT-blue)
 
 ![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 </div>
 
@@ -24,42 +27,46 @@
 - [License](#license)
 
 ## Description
-Welcome to my Text Editor PWA web application! In this week's challenge, as a transitional web developer I was tasked with creating a browser-based text editor. The Text Editor PWA project is designed to provide users with a seamless editing experience while incorporating cutting-edge web technologies. Utilizing IndexedDB for data persistence and Express.js for server-side routing, the application empowers users to create and save notes or code snippets both online and offline. By adhering to acceptance criteria such as proper server deployment on Render, successful data retrieval and storage with IndexedDB, and flawless operation across various JavaScript environments, the Text Editor PWA ensures a reliable and efficient solution for modern text editing needs.
+Welcome to the Book Search Engine PWA! This project transforms a traditional book search engine into a modern Progressive Web Application (PWA) using GraphQL and Apollo Server. By upgrading from a RESTful API to GraphQL, the application achieves enhanced performance and flexibility in fetching and managing book data. Leveraging the MERN stack with React, MongoDB, Node.js, and Express.js, the Book Search Engine ensures seamless integration and reliability. Users can effortlessly search for books, save them to their account, and manage their reading list. The application also features user authentication, allowing users to securely log in, sign up, and access their saved books. Deployed on Render with MongoDB Atlas for database management, this Book Search Engine PWA delivers a streamlined and efficient book browsing experience for avid readers.
 
 ## User Story
 ```
-AS A developer
-I WANT to create notes or code snippets with or without an internet connection
-SO THAT I can reliably retrieve them for later use
+AS AN avid reader
+I WANT to search for new books to read
+SO THAT I can keep a list of books to purchase
 ```
 
 ## Acceptance Criteria
 ```
-GIVEN a text editor web application
-WHEN I open my application in my editor
-THEN I should see a client server folder structure
-WHEN I run `npm run start` from the root directory
-THEN I find that my application should start up the backend and serve the client
-WHEN I run the text editor application from my terminal
-THEN I find that my JavaScript files have been bundled using webpack
-WHEN I run my webpack plugins
-THEN I find that I have a generated HTML file, service worker, and a manifest file
-WHEN I use next-gen JavaScript in my application
-THEN I find that the text editor still functions in the browser without errors
-WHEN I open the text editor
-THEN I find that IndexedDB has immediately created a database storage
-WHEN I enter content and subsequently click off of the DOM window
-THEN I find that the content in the text editor has been saved with IndexedDB
-WHEN I reopen the text editor after closing it
-THEN I find that the content in the text editor has been retrieved from our IndexedDB
-WHEN I click on the Install button
-THEN I download my web application as an icon on my desktop
-WHEN I load my web application
-THEN I should have a registered service worker using workbox
-WHEN I register a service worker
-THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
-WHEN I deploy to Render
-THEN I should have proper build scripts for a webpack application
+GIVEN a book search engine
+WHEN I load the search engine
+THEN I am presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
+WHEN I click on the Search for Books menu option
+THEN I am presented with an input field to search for books and a submit button
+WHEN I am not logged in and enter a search term in the input field and click the submit button
+THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site
+WHEN I click on the Login/Signup menu option
+THEN a modal appears on the screen with a toggle between the option to log in or sign up
+WHEN the toggle is set to Signup
+THEN I am presented with three inputs for a username, an email address, and a password, and a signup button
+WHEN the toggle is set to Login
+THEN I am presented with two inputs for an email address and a password and login button
+WHEN I enter a valid email address and create a password and click on the signup button
+THEN my user account is created and I am logged in to the site
+WHEN I enter my account’s email address and password and click on the login button
+THEN I the modal closes and I am logged in to the site
+WHEN I am logged in to the site
+THEN the menu options change to Search for Books, an option to see my saved books, and Logout
+WHEN I am logged in and enter a search term in the input field and click the submit button
+THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
+WHEN I click on the Save button on a book
+THEN that book’s information is saved to my account
+WHEN I click on the option to see my saved books
+THEN I am presented with all of the books I have saved to my account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
+WHEN I click on the Remove button on a book
+THEN that book is deleted from my saved books list
+WHEN I click on the Logout button
+THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
 ```
 
 ## Technologies
@@ -68,17 +75,18 @@ The technologies I used in this challenge includes:
 1. Node.js
 2. Express.js
 3. MongoDB database
-4. Webpack & WebpackPwaManifest Plugins
+4. MongoDB Atlas
 5. Concurrently
-6. Babel
-7. IndexedDB
-8. Mini-CSS-Extract Plugin
-9. Visual Studio Code(VS-code)
-10. Github: Github was used to create a repository which includes all the required files, links to the projects, package.json, npmrc file, gitignore and the README file.
-11. Gitlab: Gitlab was used to clone the project to our laptop.
+6. Apollo Server
+7. Render
+8. React
+9. GraphQL
+10. Visual Studio Code(VS-code)
+11. Github: Github was used to create a repository which includes all the required files, links to the projects, package.json, npmrc file, gitignore and the README file.
+12. Gitlab: Gitlab was used to clone the project to our laptop.
 
 ## Installation
-1. To install the challenge#19 , first create a new repository in your Github account, and then clone this repository to your local computer. 
+1. To install the challenge#21 , first create a new repository in your Github account, and then clone this repository to your local computer. 
 ```
 To clone: git clone https://github.com/your-username/repository-name.git   
 ```           
