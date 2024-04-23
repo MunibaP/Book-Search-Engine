@@ -1,254 +1,160 @@
-# 21 MERN: Book Search Engine
+<div align ="center">
 
-## Your Task
+# Book Search Engine
 
-Your assignment this week is emblematic of the fact that most modern websites are driven by two things: data and user demands. This shouldn't come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
+![License Badge](https://shields.io/badge/license-MIT-blue)
 
-This week, you’ll take starter code with a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+</div>
 
-To complete the assignment, you’ll need to do the following:
+## Table of Contents
+- [Description](#description)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- [Links](#links)
+- [Contact Information](#contact-information)
+- [License](#license)
 
-1. Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
-
-2. Modify the existing authentication middleware so that it works in the context of a GraphQL API.
-
-3. Create an Apollo Provider so that requests can communicate with an Apollo Server.
-
-4. Deploy your application to Render with a MongoDB database using MongoDB Atlas. Use the [Deploy with Render and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-render-and-mongodb-atlas) walkthrough for instructions.
+## Description
+Welcome to my Text Editor PWA web application! In this week's challenge, as a transitional web developer I was tasked with creating a browser-based text editor. The Text Editor PWA project is designed to provide users with a seamless editing experience while incorporating cutting-edge web technologies. Utilizing IndexedDB for data persistence and Express.js for server-side routing, the application empowers users to create and save notes or code snippets both online and offline. By adhering to acceptance criteria such as proper server deployment on Render, successful data retrieval and storage with IndexedDB, and flawless operation across various JavaScript environments, the Text Editor PWA ensures a reliable and efficient solution for modern text editing needs.
 
 ## User Story
-
-```md
-AS AN avid reader
-I WANT to search for new books to read
-SO THAT I can keep a list of books to purchase
+```
+AS A developer
+I WANT to create notes or code snippets with or without an internet connection
+SO THAT I can reliably retrieve them for later use
 ```
 
 ## Acceptance Criteria
-
-```md
-GIVEN a book search engine
-WHEN I load the search engine
-THEN I am presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
-WHEN I click on the Search for Books menu option
-THEN I am presented with an input field to search for books and a submit button
-WHEN I am not logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site
-WHEN I click on the Login/Signup menu option
-THEN a modal appears on the screen with a toggle between the option to log in or sign up
-WHEN the toggle is set to Signup
-THEN I am presented with three inputs for a username, an email address, and a password, and a signup button
-WHEN the toggle is set to Login
-THEN I am presented with two inputs for an email address and a password and login button
-WHEN I enter a valid email address and create a password and click on the signup button
-THEN my user account is created and I am logged in to the site
-WHEN I enter my account’s email address and password and click on the login button
-THEN I the modal closes and I am logged in to the site
-WHEN I am logged in to the site
-THEN the menu options change to Search for Books, an option to see my saved books, and Logout
-WHEN I am logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
-WHEN I click on the Save button on a book
-THEN that book’s information is saved to my account
-WHEN I click on the option to see my saved books
-THEN I am presented with all of the books I have saved to my account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
-WHEN I click on the Remove button on a book
-THEN that book is deleted from my saved books list
-WHEN I click on the Logout button
-THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
+```
+GIVEN a text editor web application
+WHEN I open my application in my editor
+THEN I should see a client server folder structure
+WHEN I run `npm run start` from the root directory
+THEN I find that my application should start up the backend and serve the client
+WHEN I run the text editor application from my terminal
+THEN I find that my JavaScript files have been bundled using webpack
+WHEN I run my webpack plugins
+THEN I find that I have a generated HTML file, service worker, and a manifest file
+WHEN I use next-gen JavaScript in my application
+THEN I find that the text editor still functions in the browser without errors
+WHEN I open the text editor
+THEN I find that IndexedDB has immediately created a database storage
+WHEN I enter content and subsequently click off of the DOM window
+THEN I find that the content in the text editor has been saved with IndexedDB
+WHEN I reopen the text editor after closing it
+THEN I find that the content in the text editor has been retrieved from our IndexedDB
+WHEN I click on the Install button
+THEN I download my web application as an icon on my desktop
+WHEN I load my web application
+THEN I should have a registered service worker using workbox
+WHEN I register a service worker
+THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
+WHEN I deploy to Render
+THEN I should have proper build scripts for a webpack application
 ```
 
-## Mock-Up
+## Technologies
+The technologies I used in this challenge includes:
 
-Let's start by revisiting the web application's appearance and functionality.
+1. Node.js
+2. Express.js
+3. MongoDB database
+4. Webpack & WebpackPwaManifest Plugins
+5. Concurrently
+6. Babel
+7. IndexedDB
+8. Mini-CSS-Extract Plugin
+9. Visual Studio Code(VS-code)
+10. Github: Github was used to create a repository which includes all the required files, links to the projects, package.json, npmrc file, gitignore and the README file.
+11. Gitlab: Gitlab was used to clone the project to our laptop.
 
-As you can see in the following animation, a user can type a search term (in this case, "star wars") in a search box and the results appear:
+## Installation
+1. To install the challenge#19 , first create a new repository in your Github account, and then clone this repository to your local computer. 
+```
+To clone: git clone https://github.com/your-username/repository-name.git   
+```           
 
-![Animation shows "star wars" typed into a search box and books about Star Wars appearing as results.](./Assets/21-mern-homework-demo-01.gif)
-
-The user can save books by clicking "Save This Book!" under each search result, as shown in the following animation:
-
-![Animation shows user clicking "Save This Book!" button to save books that appear in search results. The button label changes to "Book Already Saved" after it is clicked and the book is saved.](./Assets/21-mern-homework-demo-02.gif)
-
-A user can view their saved books on a separate page, as shown in the following animation:
-
-![The Viewing Lernantino's Books page shows the books that the user Lernaninto has saved.](./Assets/21-mern-homework-demo-03.gif)
-
-## Getting Started
-
-In order for this application to use a GraphQL API, you’ll need to refactor the API to use GraphQL on the back end and add some functionality to the front end. The following sections contain details about the files you’ll need to modify on the back end and the front end.
-
-**Important**: Make sure to study the application before building upon it. Better yet, start by making a copy of it. It's already a working application&mdash;you're converting it from RESTful API practices to a GraphQL API.
-
-### Back-End Specifications
-
-You’ll need to complete the following tasks in each of these back-end files:
-
-* `auth.js`: Update the auth middleware function to work with the GraphQL API.
-
-* `server.js`: Implement the Apollo Server and apply it to the Express server as middleware.
-
-* `Schemas` directory:
-
-  * `index.js`: Export your typeDefs and resolvers.
-
-  * `resolvers.js`: Define the query and mutation functionality to work with the Mongoose models.
-
-  **Hint**: Use the functionality in the `user-controller.js` as a guide.
-
-  * `typeDefs.js`: Define the necessary `Query` and `Mutation` types:
-
-    * `Query` type:
-
-      * `me`: Which returns a `User` type.
-  
-    * `Mutation` type:
-
-      * `login`: Accepts an email and password as parameters; returns an `Auth` type.
-
-      * `addUser`: Accepts a username, email, and password as parameters; returns an `Auth` type.
-
-      * `saveBook`: Accepts a book author's array, description, title, bookId, image, and link as parameters; returns a `User` type. (Look into creating what's known as an `input` type to handle all of these parameters!)
-
-      * `removeBook`: Accepts a book's `bookId` as a parameter; returns a `User` type.
-
-    * `User` type:
-
-      * `_id`
-
-      * `username`
-
-      * `email`
-
-      * `bookCount`
-
-      * `savedBooks` (This will be an array of the `Book` type.)
-
-    * `Book` type:
-
-      * `bookId` (Not the `_id`, but the book's `id` value returned from Google's Book API.)
-
-      * `authors` (An array of strings, as there may be more than one author.)
-
-      * `description`
-
-      * `title`
-
-      * `image`
-
-      * `link`
-
-    * `Auth` type:
-
-      * `token`
-
-      * `user` (References the `User` type.)
-
-### Front-End Specifications
-
-You'll need to create the following front-end files:
-
-* `queries.js`: This will hold the query `GET_ME`, which will execute the `me` query set up using Apollo Server.
-
-* `mutations.js`:
-
-  * `LOGIN_USER` will execute the `loginUser` mutation set up using Apollo Server.
-
-  * `ADD_USER` will execute the `addUser` mutation.
-
-  * `SAVE_BOOK` will execute the `saveBook` mutation.
-
-  * `REMOVE_BOOK` will execute the `removeBook` mutation.
-
-Additionally, you’ll need to complete the following tasks in each of these front-end files:
-
-* `App.jsx`: Create an Apollo Provider to make every request work with the Apollo Server.
+2. Open the cloned repository in a visual studio code.
  
-* `SearchBooks.jsx`:
+3. Open integrated terminal on server.js in order to run "npm install" on the command line to install dependencies. In addition, create a gitignore file, which should includes node_modules, .env file, and .DS_Store.   
 
-  * Use the Apollo `useMutation()` Hook to execute the `SAVE_BOOK` mutation in the `handleSaveBook()` function instead of the `saveBook()` function imported from the `API` file.
+## Usage
+1. Open the repository, run 'npm install' to install dependencies.
 
-  * Make sure you keep the logic for saving the book's ID to state in the `try...catch` block!
+2. Open integrated terminal on server.js in order to run "npm start" to start the server. 
 
-* `SavedBooks.jsx`:
+3. Open the Deployed application on the browser.
 
-  * Remove the `useEffect()` Hook that sets the state for `UserData`.
+4. Upon accessing the application, you should see the text editor interface. Optionally, when prompted, click on the "Install" button to download the web application as an icon on your desktop for quick access.
 
-  * Instead, use the `useQuery()` Hook to execute the `GET_ME` query on load and save it to a variable named `userData`.
+5. The Text Editor enables users to input, view, edit, or delete content, with instant saving facilitated by IndexedDB, ensuring secure local storage. Whether the browser is closed or the page is refreshed, the content remains retained and accessible when reopening the application.
 
-  * Use the `useMutation()` Hook to execute the `REMOVE_BOOK` mutation in the `handleDeleteBook()` function instead of the `deleteBook()` function that's imported from `API` file. (Make sure you keep the `removeBookId()` function in place!)
+6. Additionally, the Text Editor enables users to edit existing content or create new entries offline.
 
-* `SignupForm.jsx`: Replace the `addUser()` functionality imported from the `API` file with the `ADD_USER` mutation functionality.
+## Screenshot
+**The Text Editor homepage:**
 
-* `LoginForm.jsx`: Replace the `loginUser()` functionality imported from the `API` file with the `LOGIN_USER` mutation functionality.
+![Text Editor_homepage](/assets/textEditor_homepage.jpeg)
 
-## Grading Requirements
+**This image shows the Text Editor web application running as a freestanding Progressive Web App (PWA) icon on the desktop:**
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+![Text Editor_App](/assets/textEditor_app.jpeg.png)
 
-This Challenge is graded based on the following criteria:
+**The following image shows the application's manifest.json file:**
 
-### Technical Acceptance Criteria: 40%
+![Text Editor_Manifest.json](/assets/textEditor_manifest.png)
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+**The following image shows the application's registered service worker:**
 
-  * Has an Apollo Server that uses GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
+![Text Editor_ServiceWorker](/assets/textEditor_serviceWorker.png)
 
-  * Use an Apollo Server and apply it to the Express.js server as middleware.
+**The following image shows the application's IndexedDB storage:**
 
-  * Include schema settings for resolvers and typeDefs as outlined in the Challenge instructions.
+![Text Editor_IndexedDB](/assets/textEditor_indexedDB.png)
 
-  * Modify the existing authentication middleware to work in the context of a GraphQL API.
 
-  * Use an Apollo Provider so that the application can communicate with the Apollo Server.
+## Contributions
+Contributions to the The Text Editor are welcome and encouraged. Here are some ways you can contribute:
 
-  * Application must be deployed to Render.
+1. **Bug Reports and Feature Requests:**
+  - If you encounter any issues or have suggestions for new features, please open an issue on the GitHub repository.
+    
+2. **Enhancements to The Text Editor Application:**
+  -  We welcome contributions aimed at improving this application. If you find ways to enhance the application or identify any limitations, feel free to submit a pull request.
 
-### Deployment: 32%
+3. **Documentation Improvements:**
+  - Help improve the clarity and completeness of this documentation. If you find areas that need clarification or additional information, submit a pull request with your suggested changes.     
 
-* Application deployed at live URL.
+## Tests
+There are no tests required for this project.
 
-* Application loads with no errors.
+## Links
+- [Deployment link](https://text-editor-aj05.onrender.com)
+- [GitHub repository](https://github.com/MunibaP/Text-Editor.git)
+  
+## Questions
+I appreciate and encourage any questions you may have. Feel free to reach out for further information.
+  
+## Contact Information
+- GitHub: [MunibaP](https://github.com/MunibaP)
+- Email: munibapervez596@gmail.com
 
-* Application GitHub URL submitted.
+## License
+Please refer to [MIT]() to acquire details about this license 
 
-* GitHub repository contains application code.
+### Copyright © 2024 Muniba Pervez
 
-### Application Quality: 15%
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* User experience is intuitive and easy to navigate.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-* User interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains high-quality README file with description, screenshot, and link to the deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
