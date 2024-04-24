@@ -33,12 +33,11 @@ const LoginForm = () => {
         variables: { ...userFormData}
       });
 
-      console.log(data)
       Auth.login(data.login.token);
 
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
+      // setShowAlert(true);
     }
 
     setUserFormData({
@@ -87,6 +86,11 @@ const LoginForm = () => {
           Submit
         </Button>
       </Form>
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">
+          {error.message}
+        </div>
+      )}
     </>
   );
 };
