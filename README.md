@@ -1,32 +1,43 @@
-# 21 MERN: Book Search Engine
+<div align ="center">
 
-## Your Task
+# Book Search Engine
 
-Your assignment this week is emblematic of the fact that most modern websites are driven by two things: data and user demands. This shouldn't come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
+![License Badge](https://shields.io/badge/license-MIT-blue)
 
-This week, you’ll take starter code with a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+</div>
 
-To complete the assignment, you’ll need to do the following:
+## Table of Contents
+- [Description](#description)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- [Links](#links)
+- [Contact Information](#contact-information)
+- [License](#license)
 
-1. Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
-
-2. Modify the existing authentication middleware so that it works in the context of a GraphQL API.
-
-3. Create an Apollo Provider so that requests can communicate with an Apollo Server.
-
-4. Deploy your application to Render with a MongoDB database using MongoDB Atlas. Use the [Deploy with Render and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-render-and-mongodb-atlas) walkthrough for instructions.
+## Description
+Welcome to the Book Search Engine PWA! This project transforms a traditional book search engine into a modern Progressive Web Application (PWA) using GraphQL and Apollo Server. By upgrading from a RESTful API to GraphQL, the application achieves enhanced performance and flexibility in fetching and managing book data. Leveraging the MERN stack with React, MongoDB, Node.js, and Express.js, the Book Search Engine ensures seamless integration and reliability. Users can effortlessly search for books, save them to their account, and manage their reading list. The application also features user authentication, allowing users to securely log in, sign up, and access their saved books. Deployed on Render with MongoDB Atlas for database management, this Book Search Engine PWA delivers a streamlined and efficient book browsing experience for avid readers.
 
 ## User Story
-
-```md
+```
 AS AN avid reader
 I WANT to search for new books to read
 SO THAT I can keep a list of books to purchase
 ```
 
 ## Acceptance Criteria
-
-```md
+```
 GIVEN a book search engine
 WHEN I load the search engine
 THEN I am presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
@@ -58,197 +69,103 @@ WHEN I click on the Logout button
 THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
 ```
 
-## Mock-Up
+## Technologies
+The technologies I used in this challenge includes:
 
-Let's start by revisiting the web application's appearance and functionality.
+1. Node.js
+2. Express.js
+3. MongoDB database
+4. MongoDB Atlas
+5. Concurrently
+6. Apollo Server
+7. Render
+8. React
+9. GraphQL
+10. Visual Studio Code(VS-code)
+11. Github: Github was used to create a repository which includes all the required files, links to the projects, package.json, npmrc file, gitignore and the README file.
+12. Gitlab: Gitlab was used to clone the project to our laptop.
 
-As you can see in the following animation, a user can type a search term (in this case, "star wars") in a search box and the results appear:
+## Installation
+1. To install the challenge#21 , first create a new repository in your Github account, and then clone this repository to your local computer. 
+```
+To clone: git clone https://github.com/your-username/repository-name.git   
+```           
 
-![Animation shows "star wars" typed into a search box and books about Star Wars appearing as results.](./Assets/21-mern-homework-demo-01.gif)
-
-The user can save books by clicking "Save This Book!" under each search result, as shown in the following animation:
-
-![Animation shows user clicking "Save This Book!" button to save books that appear in search results. The button label changes to "Book Already Saved" after it is clicked and the book is saved.](./Assets/21-mern-homework-demo-02.gif)
-
-A user can view their saved books on a separate page, as shown in the following animation:
-
-![The Viewing Lernantino's Books page shows the books that the user Lernaninto has saved.](./Assets/21-mern-homework-demo-03.gif)
-
-## Getting Started
-
-In order for this application to use a GraphQL API, you’ll need to refactor the API to use GraphQL on the back end and add some functionality to the front end. The following sections contain details about the files you’ll need to modify on the back end and the front end.
-
-**Important**: Make sure to study the application before building upon it. Better yet, start by making a copy of it. It's already a working application&mdash;you're converting it from RESTful API practices to a GraphQL API.
-
-### Back-End Specifications
-
-You’ll need to complete the following tasks in each of these back-end files:
-
-* `auth.js`: Update the auth middleware function to work with the GraphQL API.
-
-* `server.js`: Implement the Apollo Server and apply it to the Express server as middleware.
-
-* `Schemas` directory:
-
-  * `index.js`: Export your typeDefs and resolvers.
-
-  * `resolvers.js`: Define the query and mutation functionality to work with the Mongoose models.
-
-  **Hint**: Use the functionality in the `user-controller.js` as a guide.
-
-  * `typeDefs.js`: Define the necessary `Query` and `Mutation` types:
-
-    * `Query` type:
-
-      * `me`: Which returns a `User` type.
-  
-    * `Mutation` type:
-
-      * `login`: Accepts an email and password as parameters; returns an `Auth` type.
-
-      * `addUser`: Accepts a username, email, and password as parameters; returns an `Auth` type.
-
-      * `saveBook`: Accepts a book author's array, description, title, bookId, image, and link as parameters; returns a `User` type. (Look into creating what's known as an `input` type to handle all of these parameters!)
-
-      * `removeBook`: Accepts a book's `bookId` as a parameter; returns a `User` type.
-
-    * `User` type:
-
-      * `_id`
-
-      * `username`
-
-      * `email`
-
-      * `bookCount`
-
-      * `savedBooks` (This will be an array of the `Book` type.)
-
-    * `Book` type:
-
-      * `bookId` (Not the `_id`, but the book's `id` value returned from Google's Book API.)
-
-      * `authors` (An array of strings, as there may be more than one author.)
-
-      * `description`
-
-      * `title`
-
-      * `image`
-
-      * `link`
-
-    * `Auth` type:
-
-      * `token`
-
-      * `user` (References the `User` type.)
-
-### Front-End Specifications
-
-You'll need to create the following front-end files:
-
-* `queries.js`: This will hold the query `GET_ME`, which will execute the `me` query set up using Apollo Server.
-
-* `mutations.js`:
-
-  * `LOGIN_USER` will execute the `loginUser` mutation set up using Apollo Server.
-
-  * `ADD_USER` will execute the `addUser` mutation.
-
-  * `SAVE_BOOK` will execute the `saveBook` mutation.
-
-  * `REMOVE_BOOK` will execute the `removeBook` mutation.
-
-Additionally, you’ll need to complete the following tasks in each of these front-end files:
-
-* `App.jsx`: Create an Apollo Provider to make every request work with the Apollo Server.
+2. Open the cloned repository in a visual studio code.
  
-* `SearchBooks.jsx`:
+3. Open integrated terminal on server.js in order to run "npm install" on the command line to install dependencies.
 
-  * Use the Apollo `useMutation()` Hook to execute the `SAVE_BOOK` mutation in the `handleSaveBook()` function instead of the `saveBook()` function imported from the `API` file.
+4. To launch the server and view the application in the browser, navigate to the root directory and execute the command "npm run develop".
 
-  * Make sure you keep the logic for saving the book's ID to state in the `try...catch` block!
+## Usage
+1. Open the repository, run 'npm install' to install dependencies.
 
-* `SavedBooks.jsx`:
+2. Open integrated terminal in the root directory in order to run "npm run develop" to start the server. 
 
-  * Remove the `useEffect()` Hook that sets the state for `UserData`.
+3. View the application either locally by running it on your machine or open the deployed application in your web browser.
 
-  * Instead, use the `useQuery()` Hook to execute the `GET_ME` query on load and save it to a variable named `userData`.
+4. Upon accessing the application, you should see the Book Search Engine interface. Upon loading the book search engine, users will be prompted with the following options "Search for Books", "Login/Signup", and "Searchbar".
 
-  * Use the `useMutation()` Hook to execute the `REMOVE_BOOK` mutation in the `handleDeleteBook()` function instead of the `deleteBook()` function that's imported from `API` file. (Make sure you keep the `removeBookId()` function in place!)
+5. Upon opening the application, users are prompted to access the menu where they can either log in or sign up using a modal, allowing them to create a new account or log in to an existing one.
 
-* `SignupForm.jsx`: Replace the `addUser()` functionality imported from the `API` file with the `ADD_USER` mutation functionality.
+6. Additionally, upon entering a search query and submitting it, users can browse through search results, each displaying book details, and save desired books to their account with a click of a button.
 
-* `LoginForm.jsx`: Replace the `loginUser()` functionality imported from the `API` file with the `LOGIN_USER` mutation functionality.
+7. Users can view their saved books, each displaying details, and delete unwanted books from their account.
 
-## Grading Requirements
+## Screenshot
+**The Book Search Engine - homepage:**
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+![The Book Search Engine_homepage](/Assets/homepage.png)
 
-This Challenge is graded based on the following criteria:
+**This image shows the Book Search Engine - bookResults:**
 
-### Technical Acceptance Criteria: 40%
+![The Book Search Engine_bookResults](/Assets/bookResults.png)
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+**The following image shows the Book Search Engine - saveButton:**
 
-  * Has an Apollo Server that uses GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
+![The Book Search Engine_saveButton](/Assets/saveButton.png)
 
-  * Use an Apollo Server and apply it to the Express.js server as middleware.
+**The following image shows the Book Search Engine - savedBooks:**
 
-  * Include schema settings for resolvers and typeDefs as outlined in the Challenge instructions.
+![The Book Search Engine_savedBooks](/Assets/savedBooks.jpeg)
 
-  * Modify the existing authentication middleware to work in the context of a GraphQL API.
+**The following image shows the Book Search Engine - noSavedBooks:**
 
-  * Use an Apollo Provider so that the application can communicate with the Apollo Server.
+![The Book Search Engine_noSavedBooks](/Assets/noSavedBooks.jpeg)
 
-  * Application must be deployed to Render.
+## Contributions
+Contributions to the The Book Search Engine are welcome and encouraged. Here are some ways you can contribute:
 
-### Deployment: 32%
+1. **Bug Reports and Feature Requests:**
+  - If you encounter any issues or have suggestions for new features, please open an issue on the GitHub repository.
+    
+2. **Enhancements to The Book Search Engine Application:**
+  -  We welcome contributions aimed at improving this application. If you find ways to enhance the application or identify any limitations, feel free to submit a pull request.
 
-* Application deployed at live URL.
+3. **Documentation Improvements:**
+  - Help improve the clarity and completeness of this documentation. If you find areas that need clarification or additional information, submit a pull request with your suggested changes.     
 
-* Application loads with no errors.
+## Tests
+There are no tests required for this project.
 
-* Application GitHub URL submitted.
+## Links
+- [Deployment link]()
+- [GitHub repository](https://github.com/MunibaP/Book-Search-Engine.git)
+  
+## Questions
+I appreciate and encourage any questions you may have. Feel free to reach out for further information.
+  
+## Contact Information
+- GitHub: [MunibaP](https://github.com/MunibaP)
+- Email: munibapervez596@gmail.com
 
-* GitHub repository contains application code.
+## License
+Please refer to [MIT]() to acquire details about this license 
 
-### Application Quality: 15%
+### Copyright © 2024 Muniba Pervez
 
-* User experience is intuitive and easy to navigate.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* User interface style is clean and polished.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains high-quality README file with description, screenshot, and link to the deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
