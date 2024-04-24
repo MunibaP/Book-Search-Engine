@@ -117,6 +117,10 @@ To clone: git clone https://github.com/your-username/repository-name.git
 
 ![The Book Search Engine_homepage](/Assets/homepage.png)
 
+**The Book Search Engine - Login/Signup:** 
+
+![The Book Search Engine_login-signup.jpeg](/Assets/login_signup.jpeg)
+
 **This image shows the Book Search Engine - bookResults:**
 
 ![The Book Search Engine_bookResults](/Assets/bookResults.png)
