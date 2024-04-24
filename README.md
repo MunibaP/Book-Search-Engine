@@ -113,26 +113,25 @@ To clone: git clone https://github.com/your-username/repository-name.git
 7. Users can view their saved books, each displaying details, and delete unwanted books from their account.
 
 ## Screenshot
-**The Text Editor homepage:**
+**The Book Search Engine - homepage:**
 
-![Text Editor_homepage](/assets/textEditor_homepage.jpeg)
+![The Book Search Engine_homepage](/Assets/homepage.png)
 
-**This image shows the Text Editor web application running as a freestanding Progressive Web App (PWA) icon on the desktop:**
+**This image shows the Book Search Engine - bookResults:**
 
-![Text Editor_App](/assets/textEditor_app.jpeg.png)
+![The Book Search Engine_bookResults](/Assets/bookResults.png)
 
-**The following image shows the application's manifest.json file:**
+**The following image shows the Book Search Engine - saveButton:**
 
-![Text Editor_Manifest.json](/assets/textEditor_manifest.png)
+![The Book Search Engine_saveButton](/Assets/saveButton.png)
 
-**The following image shows the application's registered service worker:**
+**The following image shows the Book Search Engine - savedBooks:**
 
-![Text Editor_ServiceWorker](/assets/textEditor_serviceWorker.png)
+![The Book Search Engine_savedBooks](/Assets/savedBooks.jpeg)
 
-**The following image shows the application's IndexedDB storage:**
+**The following image shows the Book Search Engine - noSavedBooks:**
 
-![Text Editor_IndexedDB](/assets/textEditor_indexedDB.png)
-
+![The Book Search Engine_noSavedBooks](/Assets/noSavedBooks.jpeg)
 
 ## Contributions
 Contributions to the The Book Search Engine are welcome and encouraged. Here are some ways you can contribute:
@@ -151,7 +150,7 @@ There are no tests required for this project.
 
 ## Links
 - [Deployment link]()
-- [GitHub repository]()
+- [GitHub repository](https://github.com/MunibaP/Book-Search-Engine.git)
   
 ## Questions
 I appreciate and encourage any questions you may have. Feel free to reach out for further information.
