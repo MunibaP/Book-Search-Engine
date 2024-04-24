@@ -31,9 +31,9 @@ const SignupForm = () => {
       event.stopPropagation();
     }
 
-    if (error) {
-      throw new Error('Something went wrong');
-    }
+    // if (error) {
+    //   throw new Error('Something went wrong');
+    // }
 
     try {
       // Execute the ADD_USER mutation
@@ -110,6 +110,11 @@ const SignupForm = () => {
           Submit
         </Button>
       </Form>
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">
+          {error.message}
+        </div>
+      )}
     </>
   );
 };
