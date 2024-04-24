@@ -93,20 +93,24 @@ To clone: git clone https://github.com/your-username/repository-name.git
 
 2. Open the cloned repository in a visual studio code.
  
-3. Open integrated terminal on server.js in order to run "npm install" on the command line to install dependencies. In addition, create a gitignore file, which should includes node_modules, .env file, and .DS_Store.   
+3. Open integrated terminal on server.js in order to run "npm install" on the command line to install dependencies.
+
+4. To launch the server and view the application in the browser, navigate to the root directory and execute the command "npm run develop".
 
 ## Usage
 1. Open the repository, run 'npm install' to install dependencies.
 
-2. Open integrated terminal on server.js in order to run "npm start" to start the server. 
+2. Open integrated terminal in the root directory in order to run "npm run develop" to start the server. 
 
-3. Open the Deployed application on the browser.
+3. View the application either locally by running it on your machine or open the deployed application in your web browser.
 
-4. Upon accessing the application, you should see the text editor interface. Optionally, when prompted, click on the "Install" button to download the web application as an icon on your desktop for quick access.
+4. Upon accessing the application, you should see the Book Search Engine interface. Upon loading the book search engine, users will be prompted with the following options "Search for Books", "Login/Signup", and "Searchbar".
 
-5. The Text Editor enables users to input, view, edit, or delete content, with instant saving facilitated by IndexedDB, ensuring secure local storage. Whether the browser is closed or the page is refreshed, the content remains retained and accessible when reopening the application.
+5. Upon opening the application, users are prompted to access the menu where they can either log in or sign up using a modal, allowing them to create a new account or log in to an existing one.
 
-6. Additionally, the Text Editor enables users to edit existing content or create new entries offline.
+6. Additionally, upon entering a search query and submitting it, users can browse through search results, each displaying book details, and save desired books to their account with a click of a button.
+
+7. Users can view their saved books, each displaying details, and delete unwanted books from their account.
 
 ## Screenshot
 **The Text Editor homepage:**
@@ -131,12 +135,12 @@ To clone: git clone https://github.com/your-username/repository-name.git
 
 
 ## Contributions
-Contributions to the The Text Editor are welcome and encouraged. Here are some ways you can contribute:
+Contributions to the The Book Search Engine are welcome and encouraged. Here are some ways you can contribute:
 
 1. **Bug Reports and Feature Requests:**
   - If you encounter any issues or have suggestions for new features, please open an issue on the GitHub repository.
     
-2. **Enhancements to The Text Editor Application:**
+2. **Enhancements to The Book Search Engine Application:**
   -  We welcome contributions aimed at improving this application. If you find ways to enhance the application or identify any limitations, feel free to submit a pull request.
 
 3. **Documentation Improvements:**
@@ -146,8 +150,8 @@ Contributions to the The Text Editor are welcome and encouraged. Here are some w
 There are no tests required for this project.
 
 ## Links
-- [Deployment link](https://text-editor-aj05.onrender.com)
-- [GitHub repository](https://github.com/MunibaP/Text-Editor.git)
+- [Deployment link]()
+- [GitHub repository]()
   
 ## Questions
 I appreciate and encourage any questions you may have. Feel free to reach out for further information.
