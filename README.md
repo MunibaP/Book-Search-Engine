@@ -93,7 +93,7 @@ To clone: git clone https://github.com/your-username/repository-name.git
 
 2. Open the cloned repository in a visual studio code.
  
-3. Open integrated terminal on server.js in order to run "npm install" on the command line to install dependencies.
+3. Open integrated terminal in the root directory in order to run "npm install" on the command line to install dependencies.
 
 4. To launch the server and view the application in the browser, navigate to the root directory and execute the command "npm run develop".
 
