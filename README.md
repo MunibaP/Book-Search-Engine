@@ -164,7 +164,7 @@ I appreciate and encourage any questions you may have. Feel free to reach out fo
 - Email: munibapervez596@gmail.com
 
 ## License
-Please refer to [MIT]() to acquire details about this license 
+Please refer to [MIT] to acquire details about this license 
 
 ### Copyright © 2024 Muniba Pervez
 
